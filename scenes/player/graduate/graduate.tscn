@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bmlmdt0gyq3xp"]
+
+[ext_resource type="Script" uid="uid://crn36ttdhwo7t" path="res://scripts/player/graduate/graduate.gd" id="1_6widt"]
+[ext_resource type="Texture2D" uid="uid://pmxwya6tqysm" path="res://sprites/player/graduate/graduate_32-idle.png" id="2_u4j3v"]
+[ext_resource type="Texture2D" uid="uid://g2bcx28psla5" path="res://sprites/player/graduate/graduate_32-walk.png" id="3_r00qc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7juj"]
+atlas = ExtResource("2_u4j3v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7e8v"]
+atlas = ExtResource("2_u4j3v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbalo"]
+atlas = ExtResource("2_u4j3v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipv68"]
+atlas = ExtResource("2_u4j3v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phyny"]
+atlas = ExtResource("3_r00qc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqitw"]
+atlas = ExtResource("3_r00qc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lypke"]
+atlas = ExtResource("3_r00qc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phppu"]
+atlas = ExtResource("3_r00qc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4he2a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7juj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7e8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbalo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipv68")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phyny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqitw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lypke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phppu")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4he2a"]
+
+[node name="Graduate" type="CharacterBody2D" unique_id=1091042360]
+script = ExtResource("1_6widt")
+speed = 150
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=466986937]
+texture_filter = 1
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_4he2a")
+animation = &"idle"
+frame = 3
+frame_progress = 0.8701238
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1456349261]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_4he2a")

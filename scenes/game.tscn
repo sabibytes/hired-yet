@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bb24pxqnyewav"]
+
+[ext_resource type="PackedScene" uid="uid://bmlmdt0gyq3xp" path="res://scenes/player/graduate/graduate.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://47msnpgdejgi" path="res://sprites/background/application_phase.png" id="1_yqjtg"]
+
+[node name="Game" type="Node2D" unique_id=1665333711]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2023453768]
+texture_filter = 1
+scale = Vector2(0.9259259, 0.92592585)
+texture = ExtResource("1_yqjtg")
+
+[node name="Graduate" parent="." unique_id=1091042360 instance=ExtResource("1_uwrxv")]
+position = Vector2(0, 10)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1411120638]
+zoom = Vector2(1.3, 1.3)
